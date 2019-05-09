@@ -1,0 +1,73 @@
+package codigo;
+
+import org.junit.Assert;
+
+import static org.junit.Assert.assertEquals;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.junit.Test;
+
+public class PruebasDeCampo {
+
+	@Test
+	public void iniciarUsuariosYPedirleElNombre() throws FileNotFoundException, IOException {
+
+		GestorDeArchivoDeUsuario nuevo = new GestorDeArchivoDeUsuario();
+
+		Assert.assertEquals("Fernando", nuevo.obtenerListaDeUsuarios().get(0).getNombre());
+
+	}
+
+	@Test
+	public void iniciarUsuariosYPedirleElPresupuesto() throws FileNotFoundException, IOException {
+
+		GestorDeArchivoDeUsuario nuevo = new GestorDeArchivoDeUsuario();
+
+		assertEquals(89, nuevo.obtenerListaDeUsuarios().get(0).getPresupuesto(), 0.00001);
+
+	}
+
+	@Test
+	public void iniciarUsuariosYPedirleElTiempoDisponible() throws FileNotFoundException, IOException {
+
+		GestorDeArchivoDeUsuario nuevo = new GestorDeArchivoDeUsuario();
+
+		Assert.assertEquals(15, nuevo.obtenerListaDeUsuarios().get(0).getTiempo(), 0.0001);
+
+	}
+
+	@Test
+	public void iniciarUsuariosYPedirleELTipoDeAtraccionPreferida() throws FileNotFoundException, IOException {
+
+		GestorDeArchivoDeUsuario nuevo = new GestorDeArchivoDeUsuario();
+
+		Assert.assertEquals(TipoDeAtraccion.AVENTURA,
+				nuevo.obtenerListaDeUsuarios().get(0).getTipoDeAtraccionPreferida());
+
+	}
+
+	/* @Test
+	public void sugierePromocionAUnUsuarioYÉsteLaAcepta() throws FileNotFoundException, IOException {
+
+		GestorDeArchivoDeUsuario nuevo = new GestorDeArchivoDeUsuario();
+		GestorDeArchivoDePromocion promocion = new GestorDeArchivoDePromocion();
+
+		Assert.assertTrue(nuevo.obtenerListaDeUsuarios().get(0).aceptarSugerenciaDePaquete(promocion.obtenerListaDePromociones().get(0)));
+		
+	}
+
+	@Test
+	public void sugierePromocionAUnUsuarioYÉsteNoLaAcepta() throws FileNotFoundException, IOException {
+
+		GestorDeArchivoDeUsuario nuevo = new GestorDeArchivoDeUsuario();
+		GestorDeArchivoDePromocion promocion = new GestorDeArchivoDePromocion();
+		
+		Assert.assertFalse(nuevo.obtenerListaDeUsuarios().get(0).aceptarSugerenciaDePaquete(promocion.obtenerListaDePromociones().get(0)));
+		
+	}
+	*/
+	
+	
+
+}
